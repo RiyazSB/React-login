@@ -1,0 +1,218 @@
+* {
+    --primary-blue: #003d70;
+    --primary-btn-hover: #4299e1;;
+}
+
+.onboarding-container {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+.onboarding-card {
+    padding: 40px;
+    max-width: 60%;
+    width: 100%;
+}
+
+.onboarding-card h1 {
+    font-size: 28px;
+    color: #2d3748;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.subtitle {
+    color: #718096;
+    margin-bottom: 32px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.search-container {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.search-container input {
+    width: 70%;
+    padding: 12px 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 24px;
+    font-size: 16px;
+    margin-bottom: 10px;
+
+    &:focus-visible {
+        outline: none;
+        border: 2px solid #a4a9af;
+    }
+}
+
+.options-container {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+    flex-direction: column;
+}
+
+.search-container ~ .options-container {
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    /* Equal, non-fixed gap (scales with content, adjust as needed) */
+    width: 100%;
+
+    .option-card {
+        display: flex;
+        align-items: center;
+        user-select: none;
+        flex: 0 1 calc(33.33% - 2rem / 3);
+        /* Approx 33% width, adjusted for gaps */
+        min-width: 200px;
+        /* Optional: Ensures tiles don’t shrink too much */
+        box-sizing: border-box;
+
+    }
+}
+
+.option-card {
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 24px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .circle {
+        background: #e3e3e3;
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .option-icon {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+        }
+    }
+}
+
+.option-card:hover {
+    border-color: var(--primary-btn-hover);
+}
+
+.option-card.selected {
+    border-color: var(--primary-btn-hover);
+    background-color: #ebf8ff;
+}
+
+.option-card h3 {
+    font-size: 16px;
+    color: #2d3748;
+    line-height: 24px;
+    margin: 0;
+}
+
+.option-card p {
+    color: #718096;
+    font-size: 14px;
+    margin: 0;
+}
+
+.selected-tag {
+    color: var(--primary-blue);
+    font-weight: bold;
+    margin-left: auto;
+}
+
+.navigation-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: end;
+}
+
+.back-button,
+.continue-button {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.back-button {
+    background: white;
+    border: 1px solid #e2e8f0;
+    color: #4a5568;
+}
+
+.continue-button {
+    background-color: var(--primary-blue);
+    color: white;
+    border: none;
+    /* flex: 1; */
+}
+
+.continue-button:disabled {
+    background-color: #e2e8f0;
+    cursor: not-allowed;
+}
+
+.progress-indicator {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
+}
+
+.progress-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #e2e8f0;
+}
+
+.progress-dot.active {
+    background-color: var(--primary-blue);
+}
+
+.expand-toggle {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    font-size: 14px;
+    font-weight: 500;
+
+    .toggle-btn {
+        color: var(--primary-blue);
+        background: none;
+        border: none;
+        font-size: inherit;
+        font-weight: inherit;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .selection-msg {
+        color: #718096;
+        margin-bottom: 32px;
+        font-size: inherit;
+        margin: 0;
+        text-align: center;
+        margin-left: auto;
+    }
+}

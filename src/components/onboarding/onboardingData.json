@@ -1,0 +1,229 @@
+{
+  "stages": [
+    {
+      "id": 1,
+      "title": "How will you use bigleadering?",
+      "subtitle": "Choose your role to personalize your experience",
+      "type": "role-selection",
+      "options": [
+        {
+          "title": "I'm a Learner",
+          "description": "I want to take courses and develop new skills",
+          "value": "learner",
+          "icon": "https://cdn-icons-png.flaticon.com/512/3135/3135810.png"
+        },
+        {
+          "title": "I'm an Educator",
+          "description": "I want to create courses and teach others",
+          "value": "educator",
+          "icon": "https://cdn-icons-png.flaticon.com/512/3135/3135823.png"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Sideofernic",
+      "subtitle": "This helps us recommend the right content for you",
+      "type": "dynamic-single-select",
+      "options": {
+        "learner": [
+          {
+            "title": "Skill up for my current job",
+            "description": "Learn new skills to excel in your current role",
+            "value": "current-job",
+            "icon": "https://cdn-icons-png.flaticon.com/512/3135/3135790.png"
+          },
+          {
+            "title": "Switch to a new career",
+            "description": "Transition to a different industry or role",
+            "value": "new-career",
+            "icon": "https://cdn-icons-png.flaticon.com/512/3135/3135776.png"
+          },
+          {
+            "title": "Start my own business",
+            "description": "Learn entrepreneurship and business fundamentals",
+            "value": "entrepreneur",
+            "icon": "https://cdn-icons-png.flaticon.com/512/3135/3135782.png"
+          },
+          {
+            "title": "Personal growth and exploration",
+            "description": "Explore new interests and expand your knowledge",
+            "value": "personal-growth",
+            "icon": "https://cdn-icons-png.flaticon.com/512/3135/3135765.png"
+          }
+        ],
+        "educator": [
+          {
+            "title": "Curriculum Development",
+            "description": "Create structured learning programs",
+            "value": "curriculum-dev",
+            "icon": "https://cdn-icons-png.flaticon.com/512/3135/3135758.png"
+          },
+          {
+            "title": "Corporate Training",
+            "description": "Develop professional workplace courses",
+            "value": "corporate-training",
+            "icon": "https://cdn-icons-png.flaticon.com/512/3135/3135749.png"
+          },
+          {
+            "title": "Academic Instruction",
+            "description": "Teach formal educational courses",
+            "value": "academic",
+            "icon": "https://cdn-icons-png.flaticon.com/512/3135/3135735.png"
+          },
+          {
+            "title": "Workshop Facilitation",
+            "description": "Lead hands-on learning sessions",
+            "value": "workshops",
+            "icon": "https://cdn-icons-png.flaticon.com/512/3135/3135726.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "title": "Select your focus areas",
+      "subtitle": "Choose at least 3 to personalize your experience",
+      "type": "dynamic-multi-select",
+      "minSelections": 3,
+      "options": {
+        "learner": [
+          {
+            "name": "Cyber Security",
+            "icon": "https://cdn-icons-png.flaticon.com/512/2489/2489076.png"
+          },
+          {
+            "name": "Product Management",
+            "icon": "https://cdn-icons-png.flaticon.com/512/2489/2489138.png"
+          },
+          {
+            "name": "Data Analysis",
+            "icon": "https://cdn-icons-png.flaticon.com/512/2489/2489198.png"
+          },
+          {
+            "name": "UX Design",
+            "icon": "https://cdn-icons-png.flaticon.com/512/2489/2489182.png"
+          },
+          {
+            "name": "Software Development",
+            "icon": "https://cdn-icons-png.flaticon.com/512/2489/2489067.png"
+          },
+          {
+            "name": "Digital Marketing",
+            "icon": "https://cdn-icons-png.flaticon.com/512/2489/2489108.png"
+          },
+          {
+            "name": "Project Management",
+            "icon": "https://cdn-icons-png.flaticon.com/512/2489/2489119.png"
+          },
+          {
+            "name": "Cloud Computing",
+            "icon": "https://cdn-icons-png.flaticon.com/512/2489/2489094.png"
+          },
+          {
+            "name": "Artificial Intelligence",
+            "icon": "https://cdn-icons-png.flaticon.com/512/2489/2489071.png"
+          }
+        ],
+        "educator": [
+          {
+            "name": "Curriculum Design",
+            "icon": "https://cdn-icons-png.flaticon.com/512/2489/2489125.png"
+          },
+          {
+            "name": "Instructional Technology",
+            "icon": "https://cdn-icons-png.flaticon.com/512/2489/2489142.png"
+          },
+          {
+            "name": "Student Engagement",
+            "icon": "https://cdn-icons-png.flaticon.com/512/2489/2489156.png"
+          },
+          {
+            "name": "Assessment Strategies",
+            "icon": "https://cdn-icons-png.flaticon.com/512/2489/2489168.png"
+          },
+          {
+            "name": "Educational Psychology",
+            "icon": "https://cdn-icons-png.flaticon.com/512/2489/2489175.png"
+          },
+          {
+            "name": "Classroom Management",
+            "icon": "https://cdn-icons-png.flaticon.com/512/2489/2489189.png"
+          },
+          {
+            "name": "Online Teaching Tools",
+            "icon": "https://cdn-icons-png.flaticon.com/512/2489/2489195.png"
+          },
+          {
+            "name": "Learning Analytics",
+            "icon": "https://cdn-icons-png.flaticon.com/512/2489/2489201.png"
+          },
+          {
+            "name": "Adult Education",
+            "icon": "https://cdn-icons-png.flaticon.com/512/2489/2489210.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "title": "Your background",
+      "subtitle": "This helps us recommend suitable content",
+      "type": "dynamic-single-select",
+      "options": {
+        "learner": [
+          {
+            "name": "High school or equivalent",
+            "icon": "https://cdn-icons-png.flaticon.com/512/3135/3135815.png"
+          },
+          {
+            "name": "Some college",
+            "icon": "https://cdn-icons-png.flaticon.com/512/3135/3135818.png"
+          },
+          {
+            "name": "Associate degree",
+            "icon": "https://cdn-icons-png.flaticon.com/512/3135/3135821.png"
+          },
+          {
+            "name": "Bachelor's degree",
+            "icon": "https://cdn-icons-png.flaticon.com/512/3135/3135825.png"
+          },
+          {
+            "name": "Master's degree",
+            "icon": "https://cdn-icons-png.flaticon.com/512/3135/3135828.png"
+          },
+          {
+            "name": "Professional degree",
+            "icon": "https://cdn-icons-png.flaticon.com/512/3135/3135832.png"
+          }
+        ],
+        "educator": [
+          {
+            "name": "1-3 years experience",
+            "icon": "https://cdn-icons-png.flaticon.com/512/3135/3135805.png"
+          },
+          {
+            "name": "4-6 years experience",
+            "icon": "https://cdn-icons-png.flaticon.com/512/3135/3135808.png"
+          },
+          {
+            "name": "7-10 years experience",
+            "icon": "https://cdn-icons-png.flaticon.com/512/3135/3135812.png"
+          },
+          {
+            "name": "10+ years experience",
+            "icon": "https://cdn-icons-png.flaticon.com/512/3135/3135816.png"
+          },
+          {
+            "name": "Industry professional",
+            "icon": "https://cdn-icons-png.flaticon.com/512/3135/3135820.png"
+          },
+          {
+            "name": "Academic researcher",
+            "icon": "https://cdn-icons-png.flaticon.com/512/3135/3135824.png"
+          }
+        ]
+      }
+    }
+  ]
+}
