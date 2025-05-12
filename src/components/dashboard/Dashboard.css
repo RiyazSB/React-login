@@ -1,0 +1,93 @@
+/* Dashboard.css */
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.dashboard-header {
+  margin-bottom: 2rem;
+}
+
+.dashboard-header h1 {
+  font-size: 2rem;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+}
+
+.welcome-text {
+  color: #718096;
+  font-size: 1.1rem;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.dashboard-card {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.wide-card {
+  grid-column: span 2;
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #4299e1;
+  margin: 1rem 0 0.5rem;
+}
+
+.stat-label {
+  color: #718096;
+  font-size: 0.9rem;
+}
+
+.activity-list {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.activity-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.activity-list li:last-child {
+  border-bottom: none;
+}
+
+.action-button {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  background: #ebf8ff;
+  color: #3182ce;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.action-button:hover {
+  background: #bee3f8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .wide-card {
+    grid-column: span 1;
+  }
+}

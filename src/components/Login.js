@@ -6,6 +6,9 @@ import { AuthContext } from '../contexts/AuthContext';
 import { getAuthRedirectResult, googleSignIn } from '../config/firebase';
 
 function Login() {
+
+  const { currentUser } = useContext(AuthContext);
+
   const [formData, setFormData] = useState({
     username: '',
     password: ''
@@ -19,6 +22,13 @@ function Login() {
   const { signInWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
 
+
+  useEffect(() => {
+    if (currentUser) {
+      navigate('/onboarding');
+    }
+  }, [currentUser, navigate]);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
@@ -31,45 +41,45 @@ function Login() {
     console.log('Login submitted:', formData);
   };
 
-  
-  
-    // const handleGoogleSignIn = async () => {
-    //   try {
-    //     const result = await signInWithGoogle();
-    //     console.log(result.user); 
-    //     navigate('/'); // Redirect after login
-    //   } catch (error) {
-    //     console.error("Login failed:", error);
-    //   }
-    // };
 
 
-    useEffect(() => {
-      const handleRedirect = async () => {
-        try {
-          const result = await getAuthRedirectResult();
-          if (result?.user) {
-            const onboardingComplete = localStorage.getItem('onboardingComplete') === 'true';
-            navigate(onboardingComplete ? '/onboarding' : '/onboarding');
-          }
-        } catch (error) {
-          console.error("Google login failed:", error);
-        }
-      };
-      handleRedirect();
-    }, [navigate]);
-  
-    const handleGoogleLogin = async () => {
+  // const handleGoogleSignIn = async () => {
+  //   try {
+  //     const result = await signInWithGoogle();
+  //     console.log(result.user); 
+  //     navigate('/'); // Redirect after login
+  //   } catch (error) {
+  //     console.error("Login failed:", error);
+  //   }
+  // };
+
+
+  useEffect(() => {
+    const handleRedirect = async () => {
       try {
-        const result = await googleSignIn();
+        const result = await getAuthRedirectResult();
         if (result?.user) {
           const onboardingComplete = localStorage.getItem('onboardingComplete') === 'true';
           navigate(onboardingComplete ? '/onboarding' : '/onboarding');
         }
       } catch (error) {
-       console.error("Google login failed:", error);
-      } 
+        console.error("Google login failed:", error);
+      }
     };
+    handleRedirect();
+  }, [navigate]);
+
+  const handleGoogleLogin = async () => {
+    try {
+      const result = await googleSignIn();
+      if (result?.user) {
+        const onboardingComplete = localStorage.getItem('onboardingComplete') === 'true';
+        navigate(onboardingComplete ? '/onboarding' : '/onboarding');
+      }
+    } catch (error) {
+      console.error("Google login failed:", error);
+    }
+  };
 
   return (
     <div className="login-container">
@@ -102,8 +112,8 @@ function Login() {
                 onChange={handleChange}
                 className={errors.password ? 'error-field' : ''}
               />
-              <button 
-                type="button" 
+              <button
+                type="button"
                 className="password-toggle"
                 onClick={() => setShowPassword(!showPassword)}
               >
@@ -119,7 +129,7 @@ function Login() {
             <span>Or</span>
           </div>
 
-          <button type="button"  onClick={handleGoogleLogin} className="google-btn">
+          <button type="button" onClick={handleGoogleLogin} className="google-btn">
             Continue with Google
           </button>
 

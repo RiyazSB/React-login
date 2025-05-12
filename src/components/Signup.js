@@ -1,9 +1,15 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import './Signup.css';
+import { AuthContext } from '../contexts/AuthContext';
 
 function Signup() {
+
+  const navigate = useNavigate();
+
+  const { currentUser } = useContext(AuthContext);
+
   const [formData, setFormData] = useState({
     username: '',
     email: '',
@@ -15,6 +21,12 @@ function Signup() {
     password: ''
   });
   const [showPassword, setShowPassword] = useState(false);
+
+   useEffect(() => {
+      if (currentUser) {
+        navigate('/onboarding');
+      }
+    }, [currentUser, navigate]);
 
   const validateEmail = (email) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
